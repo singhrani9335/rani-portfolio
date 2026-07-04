@@ -34,22 +34,21 @@ export default function Hero() {
         })
       }
       className="
-        relative
-        flex
-        min-h-screen
-        items-center
-        overflow-hidden
-        bg-white
-        text-gray-900
-        transition-colors
-        duration-500
-        dark:bg-[#050816]
-        dark:text-white
-      "
+      relative
+      flex
+      min-h-screen
+      items-center
+      overflow-hidden
+      bg-white
+      text-gray-900
+      transition-colors
+      duration-500
+      dark:bg-[#050816]
+      dark:text-white
+    "
     >
       {/* Animated Background */}
       <div className="absolute inset-0 -z-30 bg-gradient-to-br from-white via-slate-100 to-white dark:from-[#050816] dark:via-[#0b1220] dark:to-[#050816]" />
-
       {/* Grid Pattern */}
       <div
         className="
