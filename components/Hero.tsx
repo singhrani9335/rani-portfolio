@@ -47,8 +47,12 @@ export default function Hero() {
       dark:text-white
     "
     >
+      {/* SAFE BACKGROUND FIX (important for mobile dark issue) */}
+      <div className="absolute inset-0 -z-40 bg-white dark:bg-[#050816]" />
+
       {/* Animated Background */}
       <div className="absolute inset-0 -z-30 bg-gradient-to-br from-white via-slate-100 to-white dark:from-[#050816] dark:via-[#0b1220] dark:to-[#050816]" />
+
       {/* Grid Pattern */}
       <div
         className="
@@ -151,6 +155,7 @@ export default function Hero() {
               {roles[index]}
             </motion.h2>
           </AnimatePresence>
+
           {/* Description */}
           <motion.p
             initial={{ opacity: 0 }}
@@ -176,7 +181,6 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="mt-10 flex flex-wrap gap-5">
-            {/* Resume */}
             <a
               href="/resume.pdf"
               download
@@ -186,11 +190,9 @@ export default function Hero() {
                 <Download size={19} />
                 Download Resume
               </span>
-
               <span className="absolute inset-0 -translate-x-full bg-white/15 transition duration-700 group-hover:translate-x-full" />
             </a>
 
-            {/* Contact */}
             <a
               href="mailto:singhrani9335@gmail.com"
               className="group flex items-center gap-2 rounded-full border border-gray-300 bg-white/70 px-8 py-4 font-semibold text-gray-800 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:text-cyan-500 dark:border-white/15 dark:bg-white/5 dark:text-white"
@@ -199,7 +201,6 @@ export default function Hero() {
               Let's Connect
             </a>
 
-            {/* Projects */}
             <a
               href="#projects"
               className="group flex items-center gap-2 rounded-full border border-gray-300 bg-white/70 px-8 py-4 font-semibold text-gray-800 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-pink-500 hover:text-pink-500 dark:border-white/15 dark:bg-white/5 dark:text-white"
@@ -219,7 +220,6 @@ export default function Hero() {
               className="rounded-2xl border border-gray-200 bg-white/70 p-5 text-center shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-white/5"
             >
               <h3 className="text-3xl font-extrabold text-pink-500">20+</h3>
-
               <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
                 Projects
               </p>
@@ -230,7 +230,6 @@ export default function Hero() {
               className="rounded-2xl border border-gray-200 bg-white/70 p-5 text-center shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-white/5"
             >
               <h3 className="text-3xl font-extrabold text-violet-500">1+</h3>
-
               <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
                 Years
               </p>
@@ -241,7 +240,6 @@ export default function Hero() {
               className="rounded-2xl border border-gray-200 bg-white/70 p-5 text-center shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-white/5"
             >
               <h3 className="text-3xl font-extrabold text-cyan-500">100%</h3>
-
               <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
                 Responsive
               </p>
@@ -259,49 +257,29 @@ export default function Hero() {
           }}
           transition={{
             duration: 0.8,
-            y: {
-              repeat: Infinity,
-              duration: 5,
-            },
+            y: { repeat: Infinity, duration: 5 },
           }}
           className="flex justify-center"
         >
           <div className="relative">
-            {/* Premium Glow */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 via-violet-500 to-cyan-500 opacity-30 blur-[150px]" />
 
-            {/* Rotating Gradient Ring */}
             <motion.div
               animate={{ rotate: 360 }}
-              transition={{
-                repeat: Infinity,
-                duration: 20,
-                ease: "linear",
-              }}
+              transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
               className="absolute -inset-6 rounded-full bg-gradient-to-r from-pink-500 via-violet-500 to-cyan-500 p-[2px]"
             >
               <div className="h-full w-full rounded-full bg-white dark:bg-[#050816]" />
             </motion.div>
 
-            {/* Second Ring */}
             <motion.div
               animate={{ rotate: -360 }}
-              transition={{
-                repeat: Infinity,
-                duration: 30,
-                ease: "linear",
-              }}
+              transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
               className="absolute -inset-10 rounded-full border border-cyan-400/20"
             />
 
-            {/* Profile */}
             <motion.div
-              whileHover={{
-                scale: 1.03,
-              }}
-              transition={{
-                duration: 0.3,
-              }}
+              whileHover={{ scale: 1.03 }}
               className="relative overflow-hidden rounded-full border border-gray-200 bg-white/70 p-3 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-white/5"
             >
               <Image
@@ -314,61 +292,20 @@ export default function Hero() {
               />
             </motion.div>
 
-            {/* React Badge */}
-            <motion.div
-              animate={{
-                y: [0, -10, 0],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 3,
-              }}
-              className="absolute left-0 top-8 rounded-full border border-cyan-400/20 bg-white/80 px-4 py-2 shadow-lg backdrop-blur-xl dark:bg-[#0f172a]/80"
-            >
+            {/* Badges */}
+            <motion.div className="absolute left-0 top-8 rounded-full bg-white/80 dark:bg-[#0f172a]/80 px-4 py-2">
               ⚛️ React
             </motion.div>
 
-            {/* Next.js Badge */}
-            <motion.div
-              animate={{
-                y: [0, 10, 0],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 3,
-                delay: 1,
-              }}
-              className="absolute -right-6 top-28 rounded-full border border-violet-400/20 bg-white/80 px-4 py-2 shadow-lg backdrop-blur-xl dark:bg-[#0f172a]/80"
-            >
+            <motion.div className="absolute -right-6 top-28 rounded-full bg-white/80 dark:bg-[#0f172a]/80 px-4 py-2">
               ▲ Next.js
             </motion.div>
 
-            {/* TypeScript Badge */}
-            <motion.div
-              animate={{
-                x: [0, 12, 0],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 4,
-              }}
-              className="absolute -left-6 bottom-24 rounded-full border border-pink-400/20 bg-white/80 px-4 py-2 shadow-lg backdrop-blur-xl dark:bg-[#0f172a]/80"
-            >
+            <motion.div className="absolute -left-6 bottom-24 rounded-full bg-white/80 dark:bg-[#0f172a]/80 px-4 py-2">
               💙 TypeScript
             </motion.div>
 
-            {/* Tailwind Badge */}
-            <motion.div
-              animate={{
-                y: [0, -8, 0],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 4,
-                delay: 2,
-              }}
-              className="absolute right-0 bottom-6 rounded-full border border-cyan-400/20 bg-white/80 px-4 py-2 shadow-lg backdrop-blur-xl dark:bg-[#0f172a]/80"
-            >
+            <motion.div className="absolute right-0 bottom-6 rounded-full bg-white/80 dark:bg-[#0f172a]/80 px-4 py-2">
               🎨 Tailwind CSS
             </motion.div>
           </div>
@@ -377,57 +314,47 @@ export default function Hero() {
 
       {/* Scroll Indicator */}
       <motion.div
-        animate={{
-          y: [0, 8, 0],
-        }}
-        transition={{
-          repeat: Infinity,
-          duration: 2,
-        }}
+        animate={{ y: [0, 8, 0] }}
+        transition={{ repeat: Infinity, duration: 2 }}
         className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center"
       >
         <div className="flex h-10 w-6 justify-center rounded-full border-2 border-gray-400 dark:border-gray-500">
-          <div className="mt-2 h-2 w-1 rounded-full bg-cyan-500 animate-bounce" />
+          <div className="mt-2 h-2 w-1 animate-bounce rounded-full bg-cyan-500" />
         </div>
 
         <span className="mt-2 text-xs font-medium uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400">
           Scroll Down
         </span>
       </motion.div>
-      {/* Floating Particles (FULL FIX - SSR SAFE) */}
+
+      {/* Floating Particles */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {Array.from({ length: 18 }).map((_, i) => {
-          const seed = (i * 99991) % 100; // stable pseudo-random
-
+          const seed = (i * 99991) % 100;
           const left = seed % 100;
           const top = (seed * 7) % 100;
-
-          const duration = 4 + (seed % 4);
-          const delay = seed % 3;
 
           return (
             <motion.span
               key={i}
               className="absolute h-1.5 w-1.5 rounded-full bg-cyan-400/40"
-              style={{
-                left: `${left}%`,
-                top: `${top}%`,
-              }}
+              style={{ left: `${left}%`, top: `${top}%` }}
               animate={{
                 y: [0, -35, 0],
                 opacity: [0.2, 1, 0.2],
                 scale: [1, 1.6, 1],
               }}
               transition={{
-                duration,
+                duration: 4 + (seed % 4),
                 repeat: Infinity,
-                delay,
+                delay: seed % 3,
               }}
             />
           );
         })}
       </div>
-      {/* Bottom Gradient */}
+
+      {/* Bottom Gradient FIX */}
       <div className="absolute bottom-0 left-0 h-40 w-full bg-gradient-to-t from-white dark:from-[#050816] to-transparent" />
     </section>
   );

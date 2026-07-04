@@ -52,9 +52,7 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -71,6 +69,7 @@ export default function Navbar() {
         }`}
       >
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+          
           {/* Logo */}
           <button
             onClick={() => scrollToSection("#home")}
@@ -92,7 +91,7 @@ export default function Navbar() {
                 </span>
               </span>
 
-              <span className="text-[10px] tracking-[0.35em] text-gray-500 transition group-hover:text-cyan-400 dark:text-gray-400">
+              <span className="text-[10px] tracking-[0.35em] text-gray-500 dark:text-gray-400 transition group-hover:text-cyan-400">
                 FRONTEND DEVELOPER
               </span>
             </div>
@@ -125,24 +124,7 @@ export default function Navbar() {
             ))}
 
             {/* Theme Toggle */}
-            <div
-              className="
-                ml-3
-                rounded-full
-                border
-                border-gray-200
-                bg-white/60
-                p-2
-                shadow-lg
-                backdrop-blur-xl
-                transition-all
-                duration-300
-                hover:scale-105
-                hover:shadow-cyan-500/20
-                dark:border-white/10
-                dark:bg-white/5
-              "
-            >
+            <div className="ml-3 rounded-full border border-gray-200 bg-white/60 dark:bg-white/5 dark:border-white/10 p-2 shadow-lg backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:shadow-cyan-500/20">
               <ThemeToggle />
             </div>
           </nav>
@@ -151,18 +133,7 @@ export default function Navbar() {
           <button
             aria-label="Toggle Menu"
             onClick={() => setIsOpen(!isOpen)}
-            className="
-              rounded-xl
-              p-2
-              text-gray-900
-              transition-all
-              duration-300
-              hover:bg-gray-100
-              hover:text-cyan-500
-              dark:text-white
-              dark:hover:bg-white/10
-              md:hidden
-            "
+            className="rounded-xl p-2 text-gray-900 dark:text-white transition-all duration-300 hover:bg-gray-100 dark:hover:bg-white/10 hover:text-cyan-500 md:hidden"
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -170,57 +141,32 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`
-            md:hidden
-            overflow-hidden
-            transition-all
-            duration-500
-            ${isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}
-          `}
+          className={`md:hidden overflow-hidden transition-all duration-500 ${
+            isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          }`}
         >
-          <div
-            className="
-    border-t
-    border-gray-200
-    bg-white/95
-    px-6
-    py-6
-    backdrop-blur-2xl
-    dark:border-white/10
-    dark:bg-[#050816]/95
-  "
-          >
+          <div className="border-t border-gray-200 bg-white/95 dark:bg-[#050816]/95 dark:border-white/10 backdrop-blur-2xl px-6 py-6">
+            
             <div className="flex flex-col gap-2">
               {navLinks.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className={`
-                    rounded-xl
-                    px-4
-                    py-3
-                    text-left
-                    text-sm
-                    font-medium
-                    transition-all
-                    duration-300
-                    ${
-                      active === item.href
-                        ? "bg-cyan-500/10 text-cyan-500"
-                        : "text-gray-700 hover:bg-gray-100 hover:text-cyan-500 dark:text-gray-300 dark:hover:bg-white/5"
-                    }
-                  `}
+                  className={`rounded-xl px-4 py-3 text-left text-sm font-medium transition-all duration-300 ${
+                    active === item.href
+                      ? "bg-cyan-500/10 text-cyan-500"
+                      : "text-gray-700 hover:bg-gray-100 hover:text-cyan-500 dark:text-gray-300 dark:hover:bg-white/5"
+                  }`}
                 >
                   {item.name}
                 </button>
               ))}
 
-              {/* Theme Toggle */}
-              <div className="mt-4 flex items-center justify-between rounded-xl border border-gray-200 bg-gray-50 p-3 dark:border-white/10 dark:bg-white/5">
+              {/* Theme Toggle Mobile */}
+              <div className="mt-4 flex items-center justify-between rounded-xl border border-gray-200 bg-gray-50 dark:bg-white/5 dark:border-white/10 p-3">
                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   Theme
                 </span>
-
                 <ThemeToggle />
               </div>
             </div>
