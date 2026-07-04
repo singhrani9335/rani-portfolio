@@ -180,15 +180,15 @@ export default function Navbar() {
         >
           <div
             className="
-              border-t
-              border-gray-200
-              bg-white/95
-              px-6
-              py-6
-              backdrop-blur-2xl
-              dark:border-white/10
-              dark:bg-[#050816]/95
-            "
+    border-t
+    border-gray-200
+    bg-white/95
+    px-6
+    py-6
+    backdrop-blur-2xl
+    dark:border-white/10
+    dark:bg-[#050816]/95
+  "
           >
             <div className="flex flex-col gap-2">
               {navLinks.map((item) => (
