@@ -7,14 +7,12 @@ interface ThemeProviderProps {
   children: React.ReactNode;
 }
 
-export default function ThemeProvider({
-  children,
-}: ThemeProviderProps) {
+export default function ThemeProvider({ children }: ThemeProviderProps) {
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="dark"
-      enableSystem={false}
+      defaultTheme="system"
+      enableSystem
       disableTransitionOnChange
       storageKey="rani-portfolio-theme"
     >
