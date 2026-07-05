@@ -48,7 +48,7 @@ export default function Hero() {
     "
     >
       {/* SAFE BACKGROUND FIX (important for mobile dark issue) */}
-      <div className="absolute inset-0 -z-40 bg-white dark:bg-[#050816]" />
+      <div className="absolute inset-0 -z-40  dark:bg-[#050816]" />
 
       {/* Animated Background */}
       <div className="absolute inset-0 -z-30 bg-gradient-to-br from-white via-slate-100 to-white dark:from-[#050816] dark:via-[#0b1220] dark:to-[#050816]" />
@@ -90,13 +90,6 @@ export default function Hero() {
       <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-500/10 blur-[180px]" />
 
       {/* Floating Background Shapes */}
-      <motion.div
-        animate={{ y: [0, -20, 0] }}
-        transition={{ repeat: Infinity, duration: 8 }}
-        className="absolute left-[12%] top-[20%] text-4xl opacity-20"
-      >
-        ⚛️
-      </motion.div>
 
       <motion.div
         animate={{ y: [0, 20, 0] }}
