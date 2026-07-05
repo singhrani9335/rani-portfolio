@@ -11,7 +11,10 @@ interface ProjectCardProps {
   index: number;
 }
 
-export default function ProjectCard({ project, index }: ProjectCardProps) {
+export default function ProjectCard({
+  project,
+  index,
+}: ProjectCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 60 }}
@@ -21,9 +24,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         duration: 0.6,
         delay: index * 0.1,
       }}
-      whileHover={{
-        y: -10,
-      }}
+      whileHover={{ y: -10 }}
       className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:border-cyan-400/60 hover:shadow-[0_0_40px_rgba(34,211,238,0.25)]"
     >
       {/* Image */}
@@ -64,7 +65,9 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {project.title}
         </h3>
 
-        <p className="mt-4 leading-7 text-gray-400">{project.description}</p>
+        <p className="mt-4 leading-7 text-gray-400">
+          {project.description}
+        </p>
 
         {/* Tech Stack */}
         <div className="mt-6 flex flex-wrap gap-2">
@@ -84,11 +87,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-5 py-3 font-medium text-white transition ${
-              project.github === "#"
-                ? "cursor-not-allowed border border-white/10 bg-white/5 opacity-50 pointer-events-none"
-                : "border border-white/10 bg-white/5 hover:border-cyan-400 hover:bg-cyan-500"
-            }`}
+            className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 font-medium text-white transition-all duration-300 hover:border-cyan-400 hover:bg-cyan-500 hover:text-white"
           >
             <FaGithub size={18} />
             Code
@@ -98,11 +97,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-5 py-3 font-medium text-white transition ${
-              project.live === "#"
-                ? "cursor-not-allowed bg-gray-600 opacity-50 pointer-events-none"
-                : "bg-gradient-to-r from-cyan-500 to-blue-500 hover:scale-105"
-            }`}
+            className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 px-5 py-3 font-medium text-white transition-all duration-300 hover:scale-105"
           >
             <ExternalLink size={18} />
             Live
@@ -111,7 +106,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       </div>
 
       {/* Hover Glow */}
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-500/5 via-transparent to-pink-500/5 opacity-0 transition duration-500 group-hover:opacity-100" />
+      <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-500/5 via-transparent to-pink-500/5 opacity-0 transition duration-500 group-hover:opacity-100" />
     </motion.div>
   );
 }

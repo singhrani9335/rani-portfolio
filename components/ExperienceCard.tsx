@@ -28,24 +28,23 @@ export default function ExperienceCard({
       }}
       className="group relative"
     >
-      {/* Timeline Dot */}
+      {/* Timeline Icon */}
       <div
-        className={`absolute -left-[53px] top-10 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br ${item.color} border-4 border-[#0b1120] text-white shadow-[0_0_25px_rgba(34,211,238,0.35)]`}
+        className={`absolute top-0 z-20 flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full border-4 border-[#0b1120] bg-gradient-to-br ${item.color} text-white shadow-[0_0_25px_rgba(34,211,238,0.35)]`}
+        style={{ left: "-56px" }}
       >
         {item.icon}
       </div>
 
       {/* Card */}
       <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-xl transition-all duration-500 hover:border-cyan-400/60 hover:shadow-[0_0_40px_rgba(34,211,238,0.25)]">
-
         {/* Hover Gradient */}
         <div
           className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 transition duration-500 group-hover:opacity-10`}
         />
 
-        {/* Top */}
+        {/* Header */}
         <div className="relative flex flex-wrap items-center justify-between gap-3">
-
           <span
             className={`rounded-full bg-gradient-to-r ${item.color} px-4 py-1 text-xs font-semibold text-white`}
           >
@@ -56,7 +55,6 @@ export default function ExperienceCard({
             <Calendar size={15} />
             {item.year}
           </span>
-
         </div>
 
         {/* Title */}
@@ -80,7 +78,7 @@ export default function ExperienceCard({
           {item.description}
         </p>
 
-        {/* Bottom Line */}
+        {/* Bottom Accent */}
         <div
           className={`mt-8 h-1 w-20 rounded-full bg-gradient-to-r ${item.color}`}
         />

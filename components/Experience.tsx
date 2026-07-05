@@ -40,27 +40,32 @@ export default function Experience() {
           </span>
 
           <h2 className="mt-6 text-5xl font-extrabold md:text-6xl">
-            Education &{" "}
+            Education{" "}
             <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-pink-500 bg-clip-text text-transparent">
-              Experience
+              & Experience
             </span>
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-400">
-            My academic journey, practical development experience and continuous
-            learning that help me build modern, responsive and high-quality web
-            applications.
+            My academic journey, practical development experience and
+            continuous learning that help me build modern, responsive and
+            high-quality web applications.
           </p>
         </motion.div>
 
         {/* Timeline */}
         <div className="relative mt-24">
           {/* Timeline Line */}
-          <div className="absolute left-5 top-0 h-full w-1 rounded-full bg-gradient-to-b from-cyan-400 via-sky-500 to-pink-500" />
+          <div className="absolute left-6 top-0 bottom-0 w-1 rounded-full bg-gradient-to-b from-cyan-400 via-sky-500 to-pink-500" />
 
-          <div className="space-y-12 pl-16">
+          {/* Cards */}
+          <div className="relative space-y-12 pl-20">
             {experience.map((item, index) => (
-              <ExperienceCard key={item.id} item={item} index={index} />
+              <ExperienceCard
+                key={item.id}
+                item={item}
+                index={index}
+              />
             ))}
           </div>
         </div>
@@ -82,8 +87,8 @@ export default function Experience() {
           <p className="mx-auto mt-4 max-w-2xl leading-8 text-gray-400">
             I'm passionate about continuously expanding my knowledge through
             real-world projects, modern frontend technologies, and best
-            development practices. My goal is to build high-quality, scalable,
-            and engaging web experiences that make a lasting impact.
+            development practices. My goal is to build high-quality,
+            scalable, and engaging web experiences that make a lasting impact.
           </p>
         </motion.div>
       </div>

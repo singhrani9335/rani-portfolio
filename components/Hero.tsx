@@ -48,7 +48,7 @@ export default function Hero() {
     "
     >
       {/* SAFE BACKGROUND FIX (important for mobile dark issue) */}
-      <div className="absolute inset-0 -z-40  dark:bg-[#050816]" />
+      <div className="absolute inset-0 -z-40 bg-white dark:bg-[#050816]" />
 
       {/* Animated Background */}
       <div className="absolute inset-0 -z-30 bg-gradient-to-br from-white via-slate-100 to-white dark:from-[#050816] dark:via-[#0b1220] dark:to-[#050816]" />
@@ -295,7 +295,7 @@ export default function Hero() {
             </motion.div>
 
             <motion.div className="absolute -left-6 bottom-24 rounded-full bg-white/80 dark:bg-[#0f172a]/80 px-4 py-2">
-              💙 TypeScript
+               TypeScript
             </motion.div>
 
             <motion.div className="absolute right-0 bottom-6 rounded-full bg-white/80 dark:bg-[#0f172a]/80 px-4 py-2">
