@@ -41,20 +41,20 @@ export const projects: Project[] = [
 
   {
     id: 3,
-    title: "E-Commerce UI",
-    image: "/images/project3.png",
+    title: "GoEscapio - Travel Website",
+    image: "/images/goescapio.png",
     description:
-      "A modern e-commerce frontend with attractive product cards, responsive layouts, animations and an intuitive shopping experience.",
+      "A modern and responsive travel website built with Next.js, React, TypeScript, and Tailwind CSS. It features destination exploration, holiday packages, dynamic routes, reusable components, and a clean user experience.",
     tech: [
+      "Next.js",
       "React",
       "TypeScript",
       "Tailwind CSS",
-      "Redux",
     ],
-    github: "https://github.com/singhrani9335",
-    live: "https://your-ecommerce.vercel.app",
-    featured: false,
-    category: "Frontend",
-    year: "2025",
+    github: "https://github.com/singhrani9335/goescapio",
+    live: "https://goescapio-aum3.vercel.app",
+    featured: true,
+    category: "Travel Website",
+    year: "2026",
   },
 ];
