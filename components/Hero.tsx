@@ -175,7 +175,7 @@ export default function Hero() {
           {/* CTA Buttons */}
           <div className="mt-10 flex flex-wrap gap-5">
             <a
-              href="/resume.pdf"
+              href="/Resume.pdf"
               download
               className="group relative overflow-hidden rounded-full bg-gradient-to-r from-pink-500 via-violet-500 to-cyan-500 px-8 py-4 font-semibold text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-pink-500/30"
             >
@@ -295,7 +295,7 @@ export default function Hero() {
             </motion.div>
 
             <motion.div className="absolute -left-6 bottom-24 rounded-full bg-white/80 dark:bg-[#0f172a]/80 px-4 py-2">
-               TypeScript
+              TypeScript
             </motion.div>
 
             <motion.div className="absolute right-0 bottom-6 rounded-full bg-white/80 dark:bg-[#0f172a]/80 px-4 py-2">
